@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 module mux_8to1(
-   input [7:0] i,
-   input [2:0] s,
-   output reg  y
+   input [7:0] i, // 8-bit input vector
+   input [2:0] s, // 3 selection lines 
+   output reg  y  // Output of the multiplexer
    );
   always @(*)begin
     case(s) 
@@ -14,7 +14,6 @@ module mux_8to1(
       3'b101 : y<=i[5];
       3'b110 : y<=i[6];
       3'b111 : y<=i[7];
-      default:$display("Invalid input");
-    endcase
-  end
+      default:$display("Invalid input"); //default case: Display message when all cases are false
+   end
 endmodule
