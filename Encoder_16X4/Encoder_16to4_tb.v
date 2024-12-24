@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
-module Encoder_8to3_tb();
-    reg [15:0] i; // 8-bit register to drive the input of the encoder
-    wire [3:0] y; // 3-bit wire to observe the output of the encoder
+module Encoder_16to4_tb();
+    reg [15:0] i; // 16-bit register to drive the input of the encoder
+    wire [3:0] y; // 4-bit wire to observe the output of the encoder
 
-    Encoder_8to3 uut(.i(i),.y(y)); //connect testbench input or output to the module's input or output
+    Encoder_16to4 uut(.i(i),.y(y)); //connect testbench input or output to the module's input or output
     initial begin
         // Apply different test cases to the input and wait for 10 time units between each
             i=16'b0000000000000001;#10;
