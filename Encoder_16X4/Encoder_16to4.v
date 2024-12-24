@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
-module Encoder_8to3(
-    input [15:0] i, // 8-bit input vector
-    output reg [3:0] y // 3-bit output vector
+module Encoder_16to4(
+    input [15:0] i, // 16-bit input vector
+    output reg [3:0] y // 4-bit output vector
 );
 
     always @(*) begin
         // Case statement to determine output based on the encoded input
-        case(i)
+       case(i)
             16'b0000000000000001:y<=4'b0000;
             16'b0000000000000010:y<=4'b0001;
             16'b0000000000000100:y<=4'b0010;
