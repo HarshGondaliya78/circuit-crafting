@@ -3,7 +3,6 @@ module Decoder_3to8(
    input [2:0] in,
    output [7:0] out
 );
-
   assign out=(in==3'b000)?8'b00000000:
              (in==3'b001)?8'b00000001:
              (in==3'b010)?8'b00000010:
